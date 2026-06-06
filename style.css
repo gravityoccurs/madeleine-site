@@ -1,4 +1,4 @@
-/* 1. Loading your custom fonts locally */
+/* Load Custom Fonts Locally */
 @font-face {
     font-family: 'TheStoryline';
     src: url('the storyline.otf') format('opentype');
@@ -21,70 +21,77 @@
 }
 
 body {
-    background-color: #fff0f3; /* Ultra-soft minimalist pastel pink background */
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    background-position: top left;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
     overflow-x: hidden;
 }
 
-/* Page Wrapper */
-.homepage-wrapper {
+.homepage-wrapper, .page-wrapper {
     width: 100%;
-    max-width: 950px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
 }
 
-/* Header Typography */
-.birthday-header h1 {
+/* Neon Glow Typography */
+.birthday-header h1.neon-glow {
     font-family: 'TheStoryline', sans-serif;
-    font-size: 4.5rem;
-    color: #d4a3b1; /* Soft, muted rose pink */
+    font-size: 5.5rem;
+    color: #fff;
     text-align: center;
     font-weight: 400;
-    line-height: 1.2;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 4px #fff,
+        0 0 10px #ffccd5,
+        0 0 20px #ff99aa,
+        0 0 40px #ff6680,
+        0 0 70px #ff3355;
 }
 
-/* The Lace Container Box */
-.lace-container {
+/* Enlarged Lace Container Box */
+.lace-container-large {
     background-image: url('lace.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    padding: 60px 50px; /* Gives space so items sit beautifully inside the lace framework */
+    min-height: 450px;
+    padding: 90px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
-/* Clickable Navigation Cards (Left & Right) */
+/* Navigation Cards */
 .nav-card {
     flex: 1;
-    background: rgba(255, 255, 255, 0.85); /* Clean white card base with slight transparency */
+    background: rgba(255, 255, 255, 0.9); 
     border: 1px solid #fae1e6;
-    border-radius: 20px;
-    height: 250px;
-    text-decoration: none; /* Removes link underline */
+    border-radius: 24px;
+    height: 280px;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(244, 196, 205, 0.2);
+    box-shadow: 0 10px 25px rgba(244, 196, 205, 0.2);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Subtle, cute hover effect for a modern minimalist look */
 .nav-card:hover {
     transform: translateY(-8px);
     background: #ffffff;
-    box-shadow: 0 12px 28px rgba(244, 196, 205, 0.4);
+    box-shadow: 0 15px 35px rgba(244, 196, 205, 0.4);
     border-color: #f7cbd5;
 }
 
@@ -92,64 +99,186 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-.card-content h2 {
+.card-content h2, .subpage-title {
     font-family: 'Eternalo', sans-serif;
-    font-size: 1.8rem;
-    color: #9c6f7b; /* Soft dark pastel for high readability */
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    color: #9c6f7b;
+    letter-spacing: 3px;
     font-weight: 400;
-    text-transform: lowercase; /* Keeps it looking cute and modern */
+    text-transform: lowercase;
 }
 
 .heart-icon {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #e5b3c0;
     transition: transform 0.3s ease;
 }
 
 .nav-card:hover .heart-icon {
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 
-/* Center QR Code Styling */
+/* QR Code Wrapper */
 .qr-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(244, 196, 205, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(244, 196, 205, 0.15);
     border: 1px solid #fae1e6;
 }
 
 .qr-image {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
 }
 
-/* Responsive Scaling for Smaller Tablet/Mobile Views */
-@media (max-width: 768px) {
-    .lace-container {
+/* Sub-Page Content Layouts */
+.content-box {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #fae1e6;
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 850px;
+    box-shadow: 0 10px 25px rgba(244, 196, 205, 0.2);
+    text-align: center;
+}
+
+.subpage-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.letter-text {
+    font-family: 'Eternalo', sans-serif;
+    font-size: 1.2rem;
+    color: #5c4347;
+    line-height: 1.8;
+    text-align: left;
+    white-space: pre-line;
+}
+
+/* Memories Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.lightbox-item {
+    width: 100%;
+    position: relative;
+}
+
+.photo-click-area {
+    cursor: zoom-in;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.memory-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(244, 196, 205, 0.15);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.memory-photo:hover {
+    transform: scale(1.03);
+}
+
+/* --- Click to Enlarge Fixes --- */
+.lightbox-toggle {
+    display: none;
+}
+
+.overlay-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 240, 243, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.overlay-close-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-out;
+}
+
+.lightbox-toggle:checked ~ .overlay-view {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.zoomed-photo {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 6px solid #fff;
+    box-shadow: 0 15px 40px rgba(244, 196, 205, 0.4);
+}
+
+/* Back Button Styles */
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    font-family: 'Eternalo', sans-serif;
+    color: #e5b3c0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #9c6f7b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Scaling */
+@media (max-width: 850px) {
+    .lace-container-large {
         flex-direction: column;
-        padding: 40px 30px;
+        padding: 50px 40px;
         background-size: cover;
+        min-height: auto;
     }
     
     .nav-card {
         width: 100%;
-        height: 160px;
+        height: 180px;
     }
     
-    .qr-wrapper {
-        order: 3; /* Pushes QR code to the bottom on mobile layouts so layout stays clean */
-    }
-    
-    .birthday-header h1 {
-        font-size: 3rem;
+    .birthday-header h1.neon-glow {
+        font-size: 3.5rem;
     }
 }
