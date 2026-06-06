@@ -1,0 +1,155 @@
+/* 1. Loading your custom fonts locally */
+@font-face {
+    font-family: 'TheStoryline';
+    src: url('the storyline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eternalo';
+    src: url('Eternalo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff0f3; /* Ultra-soft minimalist pastel pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Page Wrapper */
+.homepage-wrapper {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Header Typography */
+.birthday-header h1 {
+    font-family: 'TheStoryline', sans-serif;
+    font-size: 4.5rem;
+    color: #d4a3b1; /* Soft, muted rose pink */
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* The Lace Container Box */
+.lace-container {
+    background-image: url('lace.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding: 60px 50px; /* Gives space so items sit beautifully inside the lace framework */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Clickable Navigation Cards (Left & Right) */
+.nav-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.85); /* Clean white card base with slight transparency */
+    border: 1px solid #fae1e6;
+    border-radius: 20px;
+    height: 250px;
+    text-decoration: none; /* Removes link underline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(244, 196, 205, 0.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Subtle, cute hover effect for a modern minimalist look */
+.nav-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(244, 196, 205, 0.4);
+    border-color: #f7cbd5;
+}
+
+.card-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-content h2 {
+    font-family: 'Eternalo', sans-serif;
+    font-size: 1.8rem;
+    color: #9c6f7b; /* Soft dark pastel for high readability */
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: lowercase; /* Keeps it looking cute and modern */
+}
+
+.heart-icon {
+    font-size: 1.2rem;
+    color: #e5b3c0;
+    transition: transform 0.3s ease;
+}
+
+.nav-card:hover .heart-icon {
+    transform: scale(1.2);
+}
+
+/* Center QR Code Styling */
+.qr-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(244, 196, 205, 0.15);
+    border: 1px solid #fae1e6;
+}
+
+.qr-image {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+/* Responsive Scaling for Smaller Tablet/Mobile Views */
+@media (max-width: 768px) {
+    .lace-container {
+        flex-direction: column;
+        padding: 40px 30px;
+        background-size: cover;
+    }
+    
+    .nav-card {
+        width: 100%;
+        height: 160px;
+    }
+    
+    .qr-wrapper {
+        order: 3; /* Pushes QR code to the bottom on mobile layouts so layout stays clean */
+    }
+    
+    .birthday-header h1 {
+        font-size: 3rem;
+    }
+}
