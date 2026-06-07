@@ -1,7 +1,7 @@
 /* Load Custom Fonts Locally */
 @font-face {
-    font-family: 'TheStoryline';
-    src: url('the storyline.otf') format('opentype');
+    font-family: 'BulgaryRose-Regular';
+    src: url('BulgaryRose-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -44,7 +44,7 @@ body {
 
 /* Neon Glow Typography */
 .birthday-header h1.neon-glow {
-    font-family: 'TheStoryline', sans-serif;
+    font-family: 'BulgaryRose-Regular', sans-serif;
     font-size: 5.5rem;
     color: #fff;
     text-align: center;
