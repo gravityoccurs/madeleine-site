@@ -59,19 +59,21 @@ body {
         0 0 70px #ff3355;
 }
 
-/* Enlarged Lace Container Box */
+/* Clean White Container Box (Updated from Lace to match Subpages with Fade-In Animation) */
 .lace-container-large {
-    background-image: url('lace.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #fae1e6;
+    border-radius: 24px;
     width: 100%;
     min-height: 450px;
-    padding: 90px 80px;
+    padding: 60px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    box-shadow: 0 10px 25px rgba(244, 196, 205, 0.2);
+    opacity: 0;
+    animation: openLetter 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 /* Navigation Cards */
@@ -85,7 +87,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 25px rgba(244, 196, 205, 0.2);
+    box-shadow: 0 10px 25px rgba(244, 196, 205, 0.1);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -122,7 +124,7 @@ body {
     transform: scale(1.25);
 }
 
-/* QR Code Wrapper & Dynamic Hover Effect */
+/* Playlist Image Wrapper & Dynamic Hover Effect */
 .qr-wrapper {
     display: flex;
     justify-content: center;
@@ -136,7 +138,7 @@ body {
 }
 
 .qr-wrapper:hover {
-    transform: scale(1.05); /* Softly magnifies the QR layout */
+    transform: scale(1.05); /* Softly magnifies the Playlist layout */
     box-shadow: 0 0 25px rgba(255, 105, 180, 0.5); /* Soft romantic pink neon aesthetic */
 }
 
@@ -284,12 +286,11 @@ body {
     }
 }
 
-/* Clean Responsive Scaling (No complex rotations) */
+/* Clean Responsive Scaling */
 @media (max-width: 850px) {
     .lace-container-large {
         flex-direction: column;
-        padding: 50px 40px;
-        background-size: cover;
+        padding: 40px 30px;
         min-height: auto;
     }
     
