@@ -24,6 +24,7 @@ body {
     background-image: url('bg.png');
     background-repeat: repeat;
     background-position: top left;
+    background-color: #fff0f3; /* Soft pastel pink backup if image takes a second to load */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,7 +200,7 @@ body {
     transform: scale(1.03);
 }
 
-/* --- Click to Enlarge Fixes --- */
+/* --- Click to Enlarge (Lightbox) --- */
 .lightbox-toggle {
     display: none;
 }
