@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Madeleine!</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday Madeleine</title>
+    <!-- The ?v=2 on the end forces mobile browsers to instantly load the new vertical layout updates -->
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
     <div class="homepage-wrapper">
         
-        <!-- Glowing Neon Title -->
+        <!-- Neon Glow Header -->
         <header class="birthday-header">
             <h1 class="neon-glow">Happy 18th Birthday, Madeleine</h1>
         </header>
 
-        <!-- Large Lace Box Container -->
-        <div class="lace-container-large">
+        <!-- Main Interactive Panel -->
+        <main class="lace-container-large">
             
-            <!-- Left Card: Memories -->
+            <!-- Left Side: Memories Link Card -->
             <a href="memories.html" class="nav-card">
                 <div class="card-content">
                     <h2>memories</h2>
-                    <span class="heart-icon">♡</span>
+                    <div class="heart-icon">♡</div>
                 </div>
             </a>
 
-            <!-- Center Image: QR Code -->
+            <!-- Center: Custom Birthday QR Code -->
             <div class="qr-wrapper">
-                <img src="qrcode.png" alt="Playlist QR Code" class="qr-image">
+                <img src="qrcode.png" alt="Birthday QR Code" class="qr-image">
             </div>
 
-            <!-- Right Card: Message -->
+            <!-- Right Side: Message Link Card -->
             <a href="message.html" class="nav-card">
                 <div class="card-content">
                     <h2>message</h2>
-                    <span class="heart-icon">♡</span>
+                    <div class="heart-icon">♡</div>
                 </div>
             </a>
 
-        </div>
+        </main>
+
     </div>
 
 </body>
