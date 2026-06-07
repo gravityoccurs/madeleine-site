@@ -24,7 +24,7 @@ body {
     background-image: url('bg.png');
     background-repeat: repeat;
     background-position: top left;
-    background-color: #fff0f3; /* Soft pastel pink backup if image takes a second to load */
+    background-color: #fff0f3; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 /* Neon Glow Typography */
@@ -49,7 +49,7 @@ body {
     color: #fff;
     text-align: center;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: 1px;
     text-shadow: 
         0 0 4px #fff,
@@ -57,9 +57,10 @@ body {
         0 0 20px #ff99aa,
         0 0 40px #ff6680,
         0 0 70px #ff3355;
+    padding: 0 10px;
 }
 
-/* Enlarged Lace Container Box */
+/* Desktop Lace Container Box */
 .lace-container-large {
     background-image: url('lace.png');
     background-size: 100% 100%;
@@ -77,7 +78,7 @@ body {
 /* Navigation Cards */
 .nav-card {
     flex: 1;
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.95); 
     border: 1px solid #fae1e6;
     border-radius: 24px;
     height: 280px;
@@ -200,7 +201,7 @@ body {
     transform: scale(1.03);
 }
 
-/* --- Click to Enlarge (Lightbox) --- */
+/* --- Lightbox --- */
 .lightbox-toggle {
     display: none;
 }
@@ -259,45 +260,47 @@ body {
     color: #9c6f7b;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.98); }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* Responsive Scaling - Mobile Layout Update */
+/* --- Clean Native Mobile Layout --- */
 @media (max-width: 850px) {
-    .lace-container-large {
-        flex-direction: column;
-        padding: 100px 50px;
-        background-size: 100% 100%;
-        min-height: 800px;
-        width: 100%;
-        max-width: 420px; /* Constrains it perfectly to mobile screen width */
-        transform: rotate(90deg); /* Rotates the decorative framework canvas */
-    }
-
-    /* Counter-rotate the inner content blocks so text & QR stay perfectly right-side up */
-    .lace-container-large > * {
-        transform: rotate(-90deg);
-    }
-    
-    .nav-card {
-        width: 140px; /* Balanced sizing inside the vertical lace boundaries */
-        height: 140px;
-        flex: none;
-    }
-    
-    .qr-wrapper {
-        padding: 12px;
-    }
-
-    .qr-image {
-        width: 100px;
-        height: 100px;
+    body {
+        padding: 20px 15px;
     }
 
     .birthday-header h1.neon-glow {
-        font-size: 3.5rem;
+        font-size: 3rem; /* Scales text down so it doesn't break into awkward lines */
+    }
+
+    .lace-container-large {
+        background-image: none; /* Removes the rigid horizontal frame asset entirely on mobile */
+        background-color: rgba(255, 255, 255, 0.5); /* Soft frost panel overlay over the paws/hearts */
+        backdrop-filter: blur(3px);
+        border: 1px solid rgba(250, 225, 230, 0.6);
+        border-radius: 32px;
+        flex-direction: column; /* Stacks layout objects naturally top-to-bottom */
+        min-height: auto;
+        padding: 40px 24px;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .nav-card {
+        width: 100%;
+        height: 160px; /* Perfectly structured touch-targets */
+        flex: none;
+    }
+
+    .qr-wrapper {
+        order: 3; /* Shifts the QR code below the main navigation cards for a cleaner flow */
+        padding: 15px;
+    }
+
+    .qr-image {
+        width: 130px;
+        height: 130px;
     }
 }
