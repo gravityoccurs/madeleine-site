@@ -224,18 +224,19 @@ body {
     background: rgba(255, 240, 243, 0.95);
     backdrop-filter: blur(5px);
     z-index: 9999;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    display: none;      /* Keeps it hidden until clicked */
+    position: fixed;    /* Ensures it breaks out of the page wrapper */
+    left: 50%;          /* Align to absolute center horizontally */
+    top: 50%;           /* Align to absolute center vertically */
+    transform: translate(-50%, -50%); /* Perfectly re-centers the box balance */
 }
 
 .overlay-close-trigger {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;       /* Forces the click-away boundary to take the full width */
+    height: 100vh;      /* Forces the click-away boundary to take the full height */
     cursor: zoom-out;
 }
 
